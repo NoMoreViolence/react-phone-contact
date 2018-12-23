@@ -1,32 +1,117 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+.app {
+  width: 500px;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+  background-color: #928cf7;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app > header {
+  display: flex;
+}
+.title {
+  padding: 1rem;
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add {
+  padding: 1rem;
+}
+.add > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.add > div:nth-child(1) > input {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #5f5fc4;
+  margin-bottom: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+}
+.add > div:nth-child(2) {
+  display: flex;
+}
+.add > div:nth-child(2) > button {
+  flex: 1;
+  border: 1px solid #5f5fc4;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #5f5fc4;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s;
+}
+.add > div:nth-child(2) > button:hover {
+  color: #5f5fc4;
+  background-color: white;
+}
+
+.search {
+  display: flex;
+  padding: 1rem;
+}
+.search > input {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #5f5fc4;
+  margin-bottom: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contacts {
+  height: 300px;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.contact {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+  background-color: #5f5fc4;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.contact > div > div > input {
+  border-radius: 0.5rem;
+  border: 1px solid #5f5fc4;
+  outline: none;
+  font-size: 1rem;
+}
+.contact > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+.contact > div:nth-child(2) > button {
+  border: 1px solid #5f5fc4;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+  color: #5f5fc4;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s;
+}
+.contact > div:nth-child(2) > button:hover {
+  background-color: #5f5fc4;
+  color: white;
 }
