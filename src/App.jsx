@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  // 현재 컴포넌트에서 사용될 State
   state = {
     name: '',
     number: '',
@@ -31,11 +32,11 @@ class App extends Component {
     ]
   };
 
+  // 값 변경 메소드
   onChange = input =>
     this.setState({
       [input.currentTarget.name]: input.currentTarget.value
     });
-
   onChangeContact = (input, number) =>
     this.setState({
       contacts: this.state.contacts.map((contact, idx) =>
@@ -43,6 +44,7 @@ class App extends Component {
       )
     });
 
+  // 연락처 추가 메소드
   addContact = () =>
     this.setState({
       contacts: [{ name: this.state.name, number: this.state.number, changeMode: false }, ...this.state.contacts],
@@ -50,6 +52,7 @@ class App extends Component {
       number: ''
     });
 
+  // 변경, 삭제 메소드
   switchChangeMode = number =>
     this.setState({
       contacts: this.state.contacts.map((contact, idx) =>
@@ -58,7 +61,6 @@ class App extends Component {
           : contact
       )
     });
-
   change = (name, phone, number) => {
     this.setState({
       contacts: this.state.contacts.map((contact, idx) =>
@@ -66,14 +68,16 @@ class App extends Component {
       )
     });
   };
-
   delete = number =>
     this.setState({
       contacts: this.state.contacts.filter((x, i) => number !== i)
     });
 
+  // 렌더링
   render = () => {
+    // 검색 결과 필터링
     const search = contacts => renderContacts(contacts.filter(info => info.name.indexOf(this.state.search) !== -1));
+    // 렌더링
     const renderContacts = contacts => {
       return contacts.map((contact, i) => (
         <div className="contact" key={i}>
